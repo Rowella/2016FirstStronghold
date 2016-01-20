@@ -4,6 +4,7 @@ import org.usfirst.frc.team4729.robot.Robot;
 
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
@@ -12,6 +13,7 @@ public class AutoCommand extends Command {
 	boolean onObstacle = false;
 	boolean isFinished = false;
 	Timer timer;
+	boolean primed = false;
 
     public AutoCommand() {
     	timer = new Timer();
@@ -22,21 +24,30 @@ public class AutoCommand extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     	timer.start();
+    	Robot.accelerometer.setFlat();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	SmartDashboard.putBoolean("isFinished", isFinished);
+    	SmartDashboard.putBoolean("onObstacle", onObstacle);
+    	SmartDashboard.putNumber("Timer",timer.get());
+    	if (timer.get() > 0.8){
+    		primed = true;
+    	}
     	if (isFinished){
-    		Robot.driveSubsystem.arcade(0, 0);
+    		Robot.driveSubsystem.tank(0, 0);
+    		SmartDashboard.putString("Progress", "Done");
     	} else {
-    		Robot.driveSubsystem.arcade(1, 0);
-    		if (!onObstacle){
-    			if (!Robot.accelerometer.isFlat()){
-    				onObstacle = true;
-    				timer.reset();
-    			} 
-    		} else {
-    			if ((Robot.accelerometer.isFlat()) && (timer.get() > 2)){
+    		Robot.driveSubsystem.tank(1, 1);
+    		SmartDashboard.putString("Progress", "Running");
+    		if ((!Robot.accelerometer.isFlat()) && (primed)){
+    			onObstacle = true;
+    			timer.reset();
+    		} 
+    		else {
+    			SmartDashboard.putBoolean("flat", true);
+    			if ((onObstacle) && (timer.get() > 0.7)){
     				isFinished = true;
     			}
     		}

@@ -2,7 +2,11 @@ package org.usfirst.frc.team4729.robot.subsystems;
 
 import org.usfirst.frc.team4729.robot.Robot;
 
+import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.PIDController;
+import edu.wpi.first.wpilibj.PIDSourceType;
 import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -11,6 +15,16 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class DriveSubsystem extends Subsystem {
 	RobotDrive driveTrain = new RobotDrive(0, 1);
+	/**double kP = 1;
+	double kI = 1;
+	double kD = 1;
+	Talon leftMotor = new Talon(0);
+	Talon rightMotor = new Talon(1);
+	Encoder leftEncoder = new Encoder(5, 6);
+	Encoder rightEncoder = new Encoder (2, 3);
+	PIDController leftPID = new PIDController(kP, kI, kD, leftEncoder, leftMotor);
+	PIDController rightPID = new PIDController(kP, kI, kD, rightEncoder, rightMotor);*/
+	
 	
 	double leftSpeed = 0;
 	double rightSpeed = 0;
@@ -23,37 +37,46 @@ public class DriveSubsystem extends Subsystem {
     // here. Call these from Commands.
 
     public void initDefaultCommand() {
+    	/**leftEncoder.setPIDSourceType(PIDSourceType.kRate);
+    	rightEncoder.setPIDSourceType(PIDSourceType.kRate);
+    	rightPID.enable();
+    	leftPID.enable();*/
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
     public void arcade(double desiredMove, double desiredTurn) {
-    	if ((desiredMove < 0.1) && (desiredMove > -0.1)){
-    		desiredMove = 0;
-    		forwardSpeed = 0;
+    	double desiredLeft = desiredMove - desiredTurn;
+    	double desiredRight = desiredMove + desiredTurn;
+    	if ((desiredLeft < 0.1) && (desiredLeft > -0.1)){
+    		desiredLeft = 0;
+    		leftSpeed = 0;
     	}
-    	if ((desiredTurn < 0.1) && (desiredTurn > -0.1)){
-    		desiredTurn = 0;
-    		turnSpeed = 0;
-    	}
-    	
-    	if  (((desiredMove > 0) && (forwardSpeed < 0)) || ((desiredMove < 0) && (forwardSpeed > 0))){
-    		forwardSpeed = 0;
-    	}
-    	if (((desiredTurn > 0) && (turnSpeed < 0)) || ((desiredTurn < 0) && (turnSpeed > 0))){
-    		turnSpeed = 0;
+    	if ((desiredRight < 0.1) && (desiredRight > -0.1)){
+    		desiredRight = 0;
+    		rightSpeed = 0;
     	}
     	
-    	if (Math.abs(desiredMove) < Math.abs(turnSpeed)){
-    		forwardSpeed = desiredMove;
+    	if  (((desiredLeft > 0) && (leftSpeed < 0)) || ((desiredLeft < 0) && (leftSpeed > 0))){
+    		leftSpeed = 0;
+    	}
+    	if (((desiredRight > 0) && (rightSpeed < 0)) || ((desiredRight < 0) && (rightSpeed > 0))){
+    		rightSpeed = 0;
     	}
     	
-    	if (Math.abs(desiredTurn) < Math.abs(turnSpeed)) {
-    		turnSpeed = desiredTurn;
+    	if (Math.abs(desiredLeft) < Math.abs(leftSpeed)){
+    		leftSpeed = desiredLeft;
     	}
     	
-    	turnSpeed += (desiredTurn-turnSpeed)*acceleration;
-    	forwardSpeed += (desiredMove-forwardSpeed)*acceleration;
-    	driveTrain.arcadeDrive(-forwardSpeed*speed, -turnSpeed*speed);
+    	if (Math.abs(desiredRight) < Math.abs(rightSpeed)) {
+    		rightSpeed = desiredRight;
+    	}
+    	
+    	rightSpeed += (desiredRight-rightSpeed)*acceleration;
+    	leftSpeed += (desiredLeft-leftSpeed)*acceleration;
+    	
+    	/**leftPID.setSetpoint(leftSpeed);
+    	rightPID.setSetpoint(rightSpeed);*/
+    	driveTrain.arcadeDrive(forwardSpeed*speed, turnSpeed*speed);
     }
     
     
@@ -84,6 +107,9 @@ public class DriveSubsystem extends Subsystem {
     	}
     	rightSpeed += (desiredRight-rightSpeed)*acceleration;
     	leftSpeed += (desiredLeft-leftSpeed)*acceleration;
+    	/**leftPID.setSetpoint(leftSpeed);
+    	rightPID.setSetpoint(rightSpeed);*/
+    	driveTrain.tankDrive(leftSpeed*speed, rightSpeed*speed);
 	}
     
 }
