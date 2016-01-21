@@ -38,6 +38,11 @@ public class AutoCommand extends Command {
     	if (isFinished){
     		Robot.driveSubsystem.tank(0, 0);
     		SmartDashboard.putString("Progress", "Done");
+    		/*if (timer.get() < 3){
+    			Robot.shooter.shoot();
+    		} else {
+    			Robot.shooter.stop();
+    		}*/
     	} else {
     		Robot.driveSubsystem.tank(1, 1);
     		SmartDashboard.putString("Progress", "Running");
@@ -49,6 +54,7 @@ public class AutoCommand extends Command {
     			SmartDashboard.putBoolean("flat", true);
     			if ((onObstacle) && (timer.get() > 0.7)){
     				isFinished = true;
+    				timer.reset();
     			}
     		}
     	}
@@ -66,5 +72,6 @@ public class AutoCommand extends Command {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	Robot.shooter.stop();
     }
 }

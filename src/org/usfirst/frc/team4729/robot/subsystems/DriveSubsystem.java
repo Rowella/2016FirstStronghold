@@ -78,6 +78,9 @@ public class DriveSubsystem extends Subsystem {
     	
     	/**leftPID.setSetpoint(leftSpeed);
     	rightPID.setSetpoint(rightSpeed);*/
+    	if (Robot.lEDMovement == true){
+    		Robot.lED.set(-leftSpeed*speed, -rightSpeed*speed);
+    	}
     	driveTrain.arcadeDrive(forwardSpeed*speed, turnSpeed*speed);
     }
     
@@ -111,6 +114,9 @@ public class DriveSubsystem extends Subsystem {
     	leftSpeed += (desiredLeft-leftSpeed)*acceleration;
     	/**leftPID.setSetpoint(leftSpeed);
     	rightPID.setSetpoint(rightSpeed);*/
+    	if (Robot.lEDMovement == true){
+    		Robot.lED.set(-leftSpeed*speed, -rightSpeed*speed);
+    	}
     	driveTrain.tankDrive(leftSpeed*speed, rightSpeed*speed);
 	}
     

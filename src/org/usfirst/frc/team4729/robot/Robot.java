@@ -8,9 +8,11 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 import org.usfirst.frc.team4729.robot.commands.AutoCommand;
 import org.usfirst.frc.team4729.robot.subsystems.Accelerometer;
+import org.usfirst.frc.team4729.robot.subsystems.Climber;
 import org.usfirst.frc.team4729.robot.subsystems.DriveSubsystem;
+import org.usfirst.frc.team4729.robot.subsystems.LED;
+import org.usfirst.frc.team4729.robot.subsystems.Shooter;
 import org.usfirst.frc.team4729.robot.commands.ExampleCommand;
-import org.usfirst.frc.team4729.robot.subsystems.DriveBase;
 import org.usfirst.frc.team4729.robot.subsystems.ExampleSubsystem;
 
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
@@ -29,6 +31,10 @@ public class Robot extends IterativeRobot {
 	public static DriveSubsystem driveSubsystem;
 	public static Accelerometer accelerometer;
 	public static OI oi;
+	public static Shooter shooter;
+	public static Climber climber;
+	public static LED lED;
+	public static boolean lEDMovement;
     Command autonomousCommand;
 
 
@@ -37,9 +43,13 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
+    	lEDMovement = false;
     	driveSubsystem = new DriveSubsystem();
     	accelerometer = new Accelerometer();
 		oi = new OI();
+		shooter = new Shooter();
+		climber = new Climber();
+		lED = new LED();
 		autonomousCommand = new AutoCommand();
     }
 	
@@ -57,18 +67,6 @@ public class Robot extends IterativeRobot {
 
 
     public void autonomousInit() {
-        autonomousCommand = (Command) chooser.getSelected();
-        
-		/* String autoSelected = SmartDashboard.getString("Auto Selector", "Default");
-		switch(autoSelected) {
-		case "My Auto":
-			autonomousCommand = new MyAutoCommand();
-			break;
-		case "Default Auto":
-		default:
-			autonomousCommand = new ExampleCommand();
-			break;
-		} */
     	
     	// schedule the autonomous command (example)
         if (autonomousCommand != null) autonomousCommand.start();
@@ -93,9 +91,6 @@ public class Robot extends IterativeRobot {
      * This function is called when the disabled button is hit.
      * You can use it to reset subsystems before shutting down.
      */
-    public void disabledInit(){
-
-    }
 
     /**
      * This function is called periodically during operator control
