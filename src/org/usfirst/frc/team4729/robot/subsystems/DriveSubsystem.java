@@ -1,6 +1,7 @@
 package org.usfirst.frc.team4729.robot.subsystems;
 
 import org.usfirst.frc.team4729.robot.Robot;
+import org.usfirst.frc.team4729.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.PIDController;
@@ -13,13 +14,14 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 /**
  *
  */
+
 public class DriveSubsystem extends Subsystem {
-	RobotDrive driveTrain = new RobotDrive(0, 1);
+	RobotDrive driveTrain = new RobotDrive(RobotMap.LEFT_MOTOR, RobotMap.RIGHT_MOTOR);
 	/**double kP = 1;
 	double kI = 1;
 	double kD = 1;
-	Talon leftMotor = new Talon(0);
-	Talon rightMotor = new Talon(1);
+	Talon leftMotor = new Talon(RobotMap.LEFT_MOTOR);
+	Talon rightMotor = new Talon(RobotMap.RIGHT_MOTOR);
 	Encoder leftEncoder = new Encoder(5, 6);
 	Encoder rightEncoder = new Encoder (2, 3);
 	PIDController leftPID = new PIDController(kP, kI, kD, leftEncoder, leftMotor);
