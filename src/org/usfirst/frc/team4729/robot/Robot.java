@@ -9,6 +9,13 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import org.usfirst.frc.team4729.robot.commands.AutoCommand;
 import org.usfirst.frc.team4729.robot.subsystems.Accelerometer;
 import org.usfirst.frc.team4729.robot.subsystems.DriveSubsystem;
+import org.usfirst.frc.team4729.robot.commands.ExampleCommand;
+import org.usfirst.frc.team4729.robot.subsystems.DriveBase;
+import org.usfirst.frc.team4729.robot.subsystems.ExampleSubsystem;
+
+import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -22,8 +29,8 @@ public class Robot extends IterativeRobot {
 	public static DriveSubsystem driveSubsystem;
 	public static Accelerometer accelerometer;
 	public static OI oi;
-
     Command autonomousCommand;
+
 
     /**
      * This function is run when the robot is first started up and should be
@@ -34,15 +41,36 @@ public class Robot extends IterativeRobot {
     	accelerometer = new Accelerometer();
 		oi = new OI();
 		autonomousCommand = new AutoCommand();
-        // instantiate the command used for the autonomous period
+    }
+	
+	/**
+     * This function is called once each time the robot enters Disabled mode.
+     * You can use it to reset any subsystem information you want to clear when
+	 * the robot is disabled.
+     */
+    public void disabledInit(){
     }
 	
 	public void disabledPeriodic() {
 		Scheduler.getInstance().run();
 	}
 
+
     public void autonomousInit() {
-        // schedule the autonomous command (example)
+        autonomousCommand = (Command) chooser.getSelected();
+        
+		/* String autoSelected = SmartDashboard.getString("Auto Selector", "Default");
+		switch(autoSelected) {
+		case "My Auto":
+			autonomousCommand = new MyAutoCommand();
+			break;
+		case "Default Auto":
+		default:
+			autonomousCommand = new ExampleCommand();
+			break;
+		} */
+    	
+    	// schedule the autonomous command (example)
         if (autonomousCommand != null) autonomousCommand.start();
     }
 

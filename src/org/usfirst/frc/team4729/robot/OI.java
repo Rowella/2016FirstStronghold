@@ -7,6 +7,7 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import org.usfirst.frc.team4729.robot.commands.OneStickArcade;
 import org.usfirst.frc.team4729.robot.commands.OneStickTank;
 import org.usfirst.frc.team4729.robot.commands.TwoStickArcade;
+import org.usfirst.frc.team4729.robot.commands.ExampleCommand;
 import org.usfirst.frc.team4729.robot.commands.TwoStickTank;
 
 /**
@@ -23,11 +24,13 @@ import org.usfirst.frc.team4729.robot.commands.TwoStickTank;
  * @author FRC
  *
  */
+
 public class OI {
-	Joystick leftStick   = new Joystick(0);
-    Joystick rightStick  = new Joystick(1);
-    Joystick xbox        = new Joystick(2);
-    Button button1       = new JoystickButton(leftStick,  1);
+	Joystick leftStick = new Joystick(0);
+	Joystick rightStick = new Joystick(1);
+	Joystick xbox = new Joystick(2);
+	
+	Button button1       = new JoystickButton(leftStick,  1);
     Button button2       = new JoystickButton(leftStick,  2);
     Button button3       = new JoystickButton(leftStick,  3);
     Button button4       = new JoystickButton(leftStick,  4);
@@ -93,6 +96,7 @@ public class OI {
     	//select.whileHeld();
     	//l3.whileHeld ();
     	//r3.whileHeld ();
+
     	
     	
     }
