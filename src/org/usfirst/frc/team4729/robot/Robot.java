@@ -10,6 +10,7 @@ import org.usfirst.frc.team4729.robot.commands.AutoCommand;
 import org.usfirst.frc.team4729.robot.subsystems.Accelerometer;
 import org.usfirst.frc.team4729.robot.subsystems.Climber;
 import org.usfirst.frc.team4729.robot.subsystems.DriveSubsystem;
+import org.usfirst.frc.team4729.robot.subsystems.FrontArm;
 import org.usfirst.frc.team4729.robot.subsystems.LED;
 import org.usfirst.frc.team4729.robot.subsystems.Shooter;
 import org.usfirst.frc.team4729.robot.commands.ExampleCommand;
@@ -33,6 +34,7 @@ public class Robot extends IterativeRobot {
 	public static OI oi;
 	public static Shooter shooter;
 	public static Climber climber;
+	public static FrontArm frontArm;
 	public static LED lED;
 	public static boolean lEDMovement;
     Command autonomousCommand;
@@ -49,6 +51,7 @@ public class Robot extends IterativeRobot {
 		oi = new OI();
 		shooter = new Shooter();
 		climber = new Climber();
+		frontArm = new FrontArm();
 		lED = new LED();
 		autonomousCommand = new AutoCommand();
     }

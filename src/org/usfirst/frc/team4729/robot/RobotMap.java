@@ -12,6 +12,7 @@ public class RobotMap {
 	public static int SHOOTER_MOTOR = 2;
 	public static int CLIMBER_MOTOR = 3;
 	public static int MEASURING_TAPE_MOTOR = 4;
+	public static int FRONT_ARM_MOTOR = 7;
 	public static int LED_A = 5;
 	public static int LED_B = 6;
 	
