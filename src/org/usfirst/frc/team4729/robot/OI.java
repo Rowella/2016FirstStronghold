@@ -4,15 +4,8 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
-import org.usfirst.frc.team4729.robot.commands.ExtendClimber;
-import org.usfirst.frc.team4729.robot.commands.Intake;
-import org.usfirst.frc.team4729.robot.commands.LEDCycle;
-import org.usfirst.frc.team4729.robot.commands.LEDDistance;
-import org.usfirst.frc.team4729.robot.commands.LEDMovement;
 import org.usfirst.frc.team4729.robot.commands.OneStickArcade;
 import org.usfirst.frc.team4729.robot.commands.OneStickTank;
-import org.usfirst.frc.team4729.robot.commands.RetractClimber;
-import org.usfirst.frc.team4729.robot.commands.Shoot;
 import org.usfirst.frc.team4729.robot.commands.TwoStickArcade;
 import org.usfirst.frc.team4729.robot.commands.ExampleCommand;
 import org.usfirst.frc.team4729.robot.commands.TwoStickTank;
@@ -71,7 +64,7 @@ public class OI {
     Button r3            = new JoystickButton(xbox,       10);
     
     public OI() {
-    	button1.whileHeld  (new LEDCycle());
+    	//button1.whileHeld  ();
     	button2.whenPressed (new OneStickTank(leftStick));
     	button3.whenPressed (new TwoStickTank(leftStick, rightStick));
     	button4.whenPressed (new OneStickArcade(leftStick));
@@ -93,16 +86,16 @@ public class OI {
     	//rightButton9.whileHeld ();
     	//rightButton10.whileHeld ();
     	//rightButton11.whileHeld ();
-    	a.whileHeld (new RetractClimber());
+    	//a.whileHeld ();
     	//b.whileHeld ();
     	//x.whileHeld ();
-    	y.whileHeld (new ExtendClimber());
-    	lb.whileHeld (new Intake());
-    	rb.whileHeld (new Shoot());
+    	//y.whileHeld ();
+    	//lb.whileHeld ();
+    	//rb.whileHeld ();
     	//start.whileHeld();
     	//select.whileHeld();
-    	l3.whileHeld (new LEDMovement());
-    	r3.whileHeld (new LEDDistance());
+    	//l3.whileHeld ();
+    	//r3.whileHeld ();
 
     	
     	
