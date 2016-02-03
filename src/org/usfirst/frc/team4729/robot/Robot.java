@@ -48,12 +48,12 @@ public class Robot extends IterativeRobot {
     	lEDMovement = false;
     	driveSubsystem = new DriveSubsystem();
     	accelerometer = new Accelerometer();
-		oi = new OI();
 		shooter = new Shooter();
 		climber = new Climber();
 		frontArm = new FrontArm();
 		lED = new LED();
 		autonomousCommand = new AutoCommand();
+		oi = new OI();
     }
 	
 	/**

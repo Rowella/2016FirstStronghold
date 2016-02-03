@@ -4,32 +4,35 @@ import org.usfirst.frc.team4729.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class ArmToFloor extends Command{
-	public ArmToFloor() {
+public class FrontArmEncoderRead extends Command{
+	public FrontArmEncoderRead(){
 		requires(Robot.frontArm);
 	}
-
+	
 	protected void initialize() {
 		
-	}
-
-	protected void execute() {
-		Robot.frontArm.lower();
 		
 	}
+
 	
+	protected void execute() {
+		Robot.frontArm.readFrontArmEncoder();
+		
+	}
+
+
 	protected boolean isFinished() {
 		return false;
 	}
 
+	
 	protected void end() {
-		Robot.frontArm.stop();
-		
+			
 	}
+
 
 	protected void interrupted() {
-		Robot.frontArm.stop();
 		
 	}
-
+	
 }
