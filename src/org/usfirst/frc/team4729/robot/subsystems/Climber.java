@@ -13,13 +13,13 @@ public class Climber extends Subsystem {
 	Talon measuringTape = new Talon(RobotMap.MEASURING_TAPE_MOTOR);
 	
 	public void extend() {
-		climber.set(1);
-		measuringTape.set(1);
+		climber.set(0.5);
+		measuringTape.set(0.5);
 	}
     
 	public void retract() {
-		climber.set(-1);
-		measuringTape.set(-1);
+		climber.set(-0.5);
+		measuringTape.set(-0.5);
 	}
 	
 	public void stop(){

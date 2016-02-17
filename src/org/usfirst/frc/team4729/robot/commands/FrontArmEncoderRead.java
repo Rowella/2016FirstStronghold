@@ -16,7 +16,7 @@ public class FrontArmEncoderRead extends Command{
 
 	
 	protected void execute() {
-		Robot.frontArm.readFrontArmEncoder();
+		//Robot.frontArm.readFrontArmEncoder();
 		
 	}
 

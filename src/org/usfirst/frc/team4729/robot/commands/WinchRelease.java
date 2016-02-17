@@ -7,21 +7,21 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class LEDCycle extends Command {
+public class WinchRelease extends Command {
 
-    public LEDCycle() {
-    	//requires(Robot.lED);
+    public WinchRelease() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    //	Robot.lED.cycleForward();
+    //	Robot.winch.extend();
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -30,12 +30,12 @@ public class LEDCycle extends Command {
     }
 
     // Called once after isFinished returns true
-    protected void end(){
+    protected void end() {
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	//Robot.lED.off();
+    //	Robot.winch.stop();
     }
 }

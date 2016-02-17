@@ -9,15 +9,17 @@ public class RobotMap {
 	//motor controllers
 	public static int LEFT_MOTOR = 0;
 	public static int RIGHT_MOTOR = 1;
-	public static int SHOOTER_MOTOR = 2;
-	public static int CLIMBER_MOTOR = 3;
-	public static int MEASURING_TAPE_MOTOR = 4;
-	public static int FRONT_ARM_MOTOR = 7;
-	public static int LED_A = 5;
-	public static int LED_B = 6;
+	public static int SHOOTER_MOTOR = 3;
+	public static int CLIMBER_MOTOR = 6;
+	public static int MEASURING_TAPE_MOTOR = 7;
+	public static int FRONT_ARM_MOTOR = 2;
+	//public static int LED_A = ;
+	//public static int LED_B = ;
+	public static int TOMAHAWK_MOTOR = 4;
+	//public static int LIFT_MOTOR = ;
 	
 	//analog inputs
-	public static int DISTANCE_SENSOR = 1;
+	//public static int DISTANCE_SENSOR = 1;
     // For example to map the left and right motors, you could define the
     // following variables to use with your drivetrain subsystem.
     // public static int leftMotor = 1;

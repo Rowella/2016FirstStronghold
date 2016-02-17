@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  *
  */
 public class DistanceSensor extends Subsystem {
-	 AnalogInput distanceSensor = new AnalogInput(RobotMap.DISTANCE_SENSOR);
+	// AnalogInput distanceSensor = new AnalogInput(RobotMap.DISTANCE_SENSOR);
    
    // Put methods for controlling this subsystem
    // here. Call these from Commands.
@@ -22,7 +22,7 @@ public class DistanceSensor extends Subsystem {
        //setDefaultCommand(new MySpecialCommand());
    }
    
-   public void senseDistance(){
+/*   public void senseDistance(){
    	double distance = distanceSensor.getVoltage();
    	SmartDashboard.putNumber("Distance", distance);
    	if (Robot.lEDMovement == false){
@@ -39,5 +39,5 @@ public class DistanceSensor extends Subsystem {
    			Robot.lED.set(1, 1);
    		}
    	}
-   }
+   } */
 }

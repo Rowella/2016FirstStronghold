@@ -13,6 +13,8 @@ import org.usfirst.frc.team4729.robot.subsystems.DriveSubsystem;
 import org.usfirst.frc.team4729.robot.subsystems.FrontArm;
 import org.usfirst.frc.team4729.robot.subsystems.LED;
 import org.usfirst.frc.team4729.robot.subsystems.Shooter;
+import org.usfirst.frc.team4729.robot.subsystems.Tomahawk;
+import org.usfirst.frc.team4729.robot.subsystems.Winch;
 import org.usfirst.frc.team4729.robot.commands.ExampleCommand;
 import org.usfirst.frc.team4729.robot.subsystems.ExampleSubsystem;
 
@@ -37,6 +39,8 @@ public class Robot extends IterativeRobot {
 	public static FrontArm frontArm;
 	public static LED lED;
 	public static boolean lEDMovement;
+	public static Tomahawk tomahawk;
+	public static Winch winch;
     Command autonomousCommand;
 
 
@@ -54,6 +58,7 @@ public class Robot extends IterativeRobot {
 		lED = new LED();
 		autonomousCommand = new AutoCommand();
 		oi = new OI();
+		tomahawk = new Tomahawk();
     }
 	
 	/**

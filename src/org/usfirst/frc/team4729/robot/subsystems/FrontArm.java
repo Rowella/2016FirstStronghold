@@ -9,14 +9,14 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class FrontArm extends Subsystem {
 	Talon frontArmMotor = new Talon(RobotMap.FRONT_ARM_MOTOR);
-	Encoder frontArmEncoder = new Encoder(6, 8);
+	//Encoder frontArmEncoder = new Encoder(6, 8);
 	
 	public void lower() {
-		frontArmMotor.set(1);
+		frontArmMotor.set(0.2);
 	}
 	
 	public void raise() {
-		frontArmMotor.set(-1);
+		frontArmMotor.set(-0.2);
 	}
 	
 	public void stop() {
@@ -24,14 +24,14 @@ public class FrontArm extends Subsystem {
 	}
 	
 	protected void initDefaultCommand() {
-		frontArmEncoder.startLiveWindowMode();
-		frontArmEncoder.reset();
+		//frontArmEncoder.startLiveWindowMode();
+		//frontArmEncoder.reset();
 		
 	}
 	
-	public double readFrontArmEncoder(){
+/*	public double readFrontArmEncoder(){
 		SmartDashboard.putNumber("frontArm", frontArmEncoder.get());
 		return frontArmEncoder.get();
 	}
-	
+	*/
 }
