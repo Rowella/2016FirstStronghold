@@ -84,14 +84,16 @@ public class OI {
     	
     	//button6.whileHeld (new ArmToFloor());
     	//button7.whenPressed (new FrontArmEncoderRead());
-    	b.whileHeld(new TomahawksUp());
-    	x.whileHeld(new TomahawksDown());
+    	r3.whileHeld(new TomahawksUp());
+    	l3.whileHeld(new TomahawksDown());
     	rb.whileHeld(new Intake());
     	lb.whileHeld(new Shoot());
     	y.whileHeld(new RetractClimber());
     	a.whileHeld(new ExtendClimber());
     	start.whileHeld(new ArmToFloor());
     	select.whileHeld(new ArmUp());
+    	b.whileHeld(new WinchRelease());
+    	x.whileHeld(new WinchRetract());
   
     	//button8.whileHeld ();
     	//button9.whileHeld ();

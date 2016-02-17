@@ -59,6 +59,7 @@ public class Robot extends IterativeRobot {
 		autonomousCommand = new AutoCommand();
 		oi = new OI();
 		tomahawk = new Tomahawk();
+		winch = new Winch();
     }
 	
 	/**

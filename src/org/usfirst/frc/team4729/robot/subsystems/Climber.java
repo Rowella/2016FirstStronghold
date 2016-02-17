@@ -3,27 +3,26 @@ package org.usfirst.frc.team4729.robot.subsystems;
 import org.usfirst.frc.team4729.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
  *
  */
 public class Climber extends Subsystem {
-	Talon climber = new Talon(RobotMap.CLIMBER_MOTOR);
-	Talon measuringTape = new Talon(RobotMap.MEASURING_TAPE_MOTOR);
+	Victor measuringTape = new Victor (RobotMap.MEASURING_TAPE_MOTOR);
 	
 	public void extend() {
-		climber.set(0.5);
+
 		measuringTape.set(0.5);
 	}
     
 	public void retract() {
-		climber.set(-0.5);
 		measuringTape.set(-0.5);
 	}
 	
 	public void stop(){
-		climber.set(0);
+
 		measuringTape.set(0);
 	}
 	

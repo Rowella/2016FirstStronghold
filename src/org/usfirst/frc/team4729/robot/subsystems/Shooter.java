@@ -16,11 +16,11 @@ public class Shooter extends Subsystem {
 	Talon shooter = new Talon (RobotMap.SHOOTER_MOTOR);
 	
 	public void shoot() {
-		shooter.set(1);
+		shooter.set(0.3);
 	}
 	
 	public void intake() {
-		shooter.set(-1);
+		shooter.set(-0.3);
 	}
 	
 	public void stop() {
