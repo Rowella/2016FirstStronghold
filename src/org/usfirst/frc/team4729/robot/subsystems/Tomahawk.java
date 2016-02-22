@@ -17,11 +17,11 @@ public class Tomahawk extends Subsystem {
 	Victor tomahawk = new Victor (RobotMap.TOMAHAWK_MOTOR);
 	
 	public void up() {
-		tomahawk.set(-1);
+		tomahawk.set(-0.5);
 	}
 	
 	public void down() {
-		tomahawk.set(1);
+		tomahawk.set(0.5);
 	}
 	
 	public void stop() {

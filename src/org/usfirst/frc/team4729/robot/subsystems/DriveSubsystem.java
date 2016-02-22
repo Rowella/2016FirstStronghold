@@ -81,8 +81,7 @@ public class DriveSubsystem extends Subsystem {
     	/*if (Robot.lEDMovement == true){
     		Robot.lED.set(-leftSpeed*speed, -rightSpeed*speed);
     	} */
-    	driveTrain.arcadeDrive(desiredMove * 0.5, desiredTurn * 0.5);
-    	//driveTrain.arcadeDrive(forwardSpeed*speed, turnSpeed*speed);
+    	driveTrain.arcadeDrive(forwardSpeed*speed, turnSpeed*speed);
     }
     
     

@@ -12,11 +12,11 @@ public class FrontArm extends Subsystem {
 	//Encoder frontArmEncoder = new Encoder(6, 8);
 	
 	public void lower() {
-		frontArmMotor.set(0.3);
+		frontArmMotor.set(1);
 	}
 	
 	public void raise() {
-		frontArmMotor.set(-0.3);
+		frontArmMotor.set(-1);
 	}
 	
 	public void stop() {
