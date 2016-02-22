@@ -2,16 +2,21 @@
 package org.usfirst.frc.team4729.robot;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 import org.usfirst.frc.team4729.robot.commands.AutoCommand;
+import org.usfirst.frc.team4729.robot.commands.StartUpSpeed;
+import org.usfirst.frc.team4729.robot.commands.TwoStickArcade;
+import org.usfirst.frc.team4729.robot.commands.TwoStickTank;
 import org.usfirst.frc.team4729.robot.subsystems.Accelerometer;
 import org.usfirst.frc.team4729.robot.subsystems.Climber;
 import org.usfirst.frc.team4729.robot.subsystems.DriveSubsystem;
 import org.usfirst.frc.team4729.robot.subsystems.FrontArm;
 import org.usfirst.frc.team4729.robot.subsystems.LED;
+import org.usfirst.frc.team4729.robot.subsystems.LimitSwitch;
 import org.usfirst.frc.team4729.robot.subsystems.Shooter;
 import org.usfirst.frc.team4729.robot.subsystems.Tomahawk;
 import org.usfirst.frc.team4729.robot.subsystems.Winch;
@@ -41,6 +46,7 @@ public class Robot extends IterativeRobot {
 	public static boolean lEDMovement;
 	public static Tomahawk tomahawk;
 	public static Winch winch;
+	public static LimitSwitch limitSwitch;
     Command autonomousCommand;
 
 
@@ -60,6 +66,7 @@ public class Robot extends IterativeRobot {
 		oi = new OI();
 		tomahawk = new Tomahawk();
 		winch = new Winch();
+		limitSwitch = new LimitSwitch();
     }
 	
 	/**
@@ -94,6 +101,10 @@ public class Robot extends IterativeRobot {
         // continue until interrupted by another command, remove
         // this line or comment it out.
         if (autonomousCommand != null) autonomousCommand.cancel();
+        Joystick leftStick = new Joystick(0);
+        Joystick rightStick = new Joystick(1);
+        TwoStickArcade twoStickTank = new TwoStickArcade(leftStick, rightStick);
+        StartUpSpeed startUpSpeed = new StartUpSpeed();        
     }
 
     /**

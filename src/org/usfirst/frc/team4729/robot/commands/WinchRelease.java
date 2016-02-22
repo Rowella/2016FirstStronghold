@@ -3,6 +3,7 @@ package org.usfirst.frc.team4729.robot.commands;
 import org.usfirst.frc.team4729.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
@@ -16,7 +17,7 @@ public class WinchRelease extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	
+    	SmartDashboard.putString("Winching direction", "in");    	
     }
 
     // Called repeatedly when this Command is scheduled to run

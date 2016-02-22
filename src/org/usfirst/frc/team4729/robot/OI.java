@@ -15,6 +15,8 @@ import org.usfirst.frc.team4729.robot.commands.OneStickTank;
 import org.usfirst.frc.team4729.robot.commands.OneStickTankXbox;
 import org.usfirst.frc.team4729.robot.commands.RetractClimber;
 import org.usfirst.frc.team4729.robot.commands.Shoot;
+import org.usfirst.frc.team4729.robot.commands.ToggleAcceleration;
+import org.usfirst.frc.team4729.robot.commands.ToggleSpeed;
 import org.usfirst.frc.team4729.robot.commands.TomahawksDown;
 import org.usfirst.frc.team4729.robot.commands.TomahawksUp;
 import org.usfirst.frc.team4729.robot.commands.TwoStickArcade;
@@ -24,6 +26,7 @@ import org.usfirst.frc.team4729.robot.commands.TwoStickTank;
 import org.usfirst.frc.team4729.robot.commands.TwoStickTankXbox;
 import org.usfirst.frc.team4729.robot.commands.WinchRelease;
 import org.usfirst.frc.team4729.robot.commands.WinchRetract;
+import org.usfirst.frc.team4729.robot.subsystems.DriveSubsystem;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -97,6 +100,8 @@ public class OI {
     	button3.whenPressed (new TwoStickTank(leftStick, rightStick));
     	button4.whenPressed (new OneStickArcade(leftStick));
     	button5.whenPressed (new TwoStickArcade(leftStick, rightStick));
+    	button6.whenPressed (new ToggleSpeed());
+    	button7.whenPressed (new ToggleAcceleration());
     	
     	//button6.whileHeld (new ArmToFloor());
     	//button7.whenPressed (new FrontArmEncoderRead());

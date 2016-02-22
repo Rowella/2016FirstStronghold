@@ -27,14 +27,31 @@ public class DriveSubsystem extends Subsystem {
 	PIDController leftPID = new PIDController(kP, kI, kD, leftEncoder, leftMotor);
 	PIDController rightPID = new PIDController(kP, kI, kD, rightEncoder, rightMotor);*/
 	
+	double speed;
+	double acceleration;
 	
 	double leftSpeed = 0;
 	double rightSpeed = 0;
 	double turnSpeed = 0;
 	double forwardSpeed = 0;
 	
-	double acceleration = 0.05;
-	double speed = 1;
+
+	
+	public void highSpeed(){
+    	speed = 1;
+    }
+    
+    public void lowSpeed(){
+    	speed = 0.6;
+    }
+    
+    public void highAcceleration(){
+    	acceleration = 0.05;
+    }
+    
+    public void lowAcceleration(){
+    	acceleration = 0.025;
+    }
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
@@ -47,7 +64,22 @@ public class DriveSubsystem extends Subsystem {
         //setDefaultCommand(new MySpecialCommand());
     }
     public void arcade(double desiredMove, double desiredTurn) {
-    	double desiredLeft = desiredMove - desiredTurn;
+    	if (Math.abs(desiredMove) < Math.abs(turnSpeed)){
+    		forwardSpeed = desiredMove;
+    	}
+    	
+    	if (Math.abs(desiredTurn) < Math.abs(turnSpeed)) {
+    		turnSpeed = desiredTurn;
+    	}
+    	
+    	turnSpeed += (desiredTurn-turnSpeed)*acceleration;
+    	forwardSpeed += (desiredMove-forwardSpeed)*acceleration;
+    	driveTrain.arcadeDrive(-forwardSpeed*speed, -turnSpeed*speed);
+    	/*if (Robot.ledMovement == true){
+    		Robot.leds.set(-forwardSpeed*speed, -turnSpeed*speed);
+    	}*/
+    	
+    	/*double desiredLeft = desiredMove - desiredTurn;
     	double desiredRight = desiredMove + desiredTurn;
     	if ((desiredLeft < 0.1) && (desiredLeft > -0.1)){
     		desiredLeft = 0;
@@ -75,7 +107,7 @@ public class DriveSubsystem extends Subsystem {
     	
     	rightSpeed += (desiredRight-rightSpeed)*acceleration;
     	leftSpeed += (desiredLeft-leftSpeed)*acceleration;
-    	
+    	*/
     	/**leftPID.setSetpoint(leftSpeed);
     	rightPID.setSetpoint(rightSpeed);*/
     	/*if (Robot.lEDMovement == true){
