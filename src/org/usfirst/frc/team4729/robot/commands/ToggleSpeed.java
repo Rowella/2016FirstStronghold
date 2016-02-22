@@ -22,6 +22,7 @@ public class ToggleSpeed extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	if (SmartDashboard.getString("Speed setting") == "low") {
+    		SmartDashboard.putString("Speed setting", "high");
     		Robot.driveSubsystem.highSpeed();
     	}
     	

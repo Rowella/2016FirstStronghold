@@ -22,6 +22,7 @@ public class ToggleAcceleration extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	if (SmartDashboard.getString("Acceleration setting") == "low") {
+    		SmartDashboard.putString("Acceleration setting", "high");
     		Robot.driveSubsystem.highAcceleration();
     	}
     	
