@@ -32,7 +32,7 @@ public class AutoCommand extends Command {
     	SmartDashboard.putBoolean("isFinished", isFinished);
     	SmartDashboard.putBoolean("onObstacle", onObstacle);
     	SmartDashboard.putNumber("Timer",timer.get());
-    	if (timer.get() > 0.8){
+    	if (timer.get() > 0.4){
     		primed = true;
     	}
     	if (isFinished){

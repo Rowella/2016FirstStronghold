@@ -10,14 +10,18 @@ import org.usfirst.frc.team4729.robot.commands.ExtendClimber;
 import org.usfirst.frc.team4729.robot.commands.FrontArmEncoderRead;
 import org.usfirst.frc.team4729.robot.commands.Intake;
 import org.usfirst.frc.team4729.robot.commands.OneStickArcade;
+import org.usfirst.frc.team4729.robot.commands.OneStickArcadeXbox;
 import org.usfirst.frc.team4729.robot.commands.OneStickTank;
+import org.usfirst.frc.team4729.robot.commands.OneStickTankXbox;
 import org.usfirst.frc.team4729.robot.commands.RetractClimber;
 import org.usfirst.frc.team4729.robot.commands.Shoot;
 import org.usfirst.frc.team4729.robot.commands.TomahawksDown;
 import org.usfirst.frc.team4729.robot.commands.TomahawksUp;
 import org.usfirst.frc.team4729.robot.commands.TwoStickArcade;
 import org.usfirst.frc.team4729.robot.commands.ExampleCommand;
+import org.usfirst.frc.team4729.robot.commands.TwoStickArcadeXbox;
 import org.usfirst.frc.team4729.robot.commands.TwoStickTank;
+import org.usfirst.frc.team4729.robot.commands.TwoStickTankXbox;
 import org.usfirst.frc.team4729.robot.commands.WinchRelease;
 import org.usfirst.frc.team4729.robot.commands.WinchRetract;
 
@@ -41,6 +45,7 @@ public class OI {
 	Joystick rightStick = new Joystick(1);
 	Joystick xbox = new Joystick(2);
 	Joystick xbox2 = new Joystick(3);
+	
 	Button button1       = new JoystickButton(leftStick,  1);
     Button button2       = new JoystickButton(leftStick,  2);
     Button button3       = new JoystickButton(leftStick,  3);
@@ -74,6 +79,17 @@ public class OI {
     Button l3            = new JoystickButton(xbox,       9);
     Button r3            = new JoystickButton(xbox,       10);
     
+    Button a2            = new JoystickButton(xbox2,      1);
+    Button b2            = new JoystickButton(xbox2,      2);
+    Button x2            = new JoystickButton(xbox2,      3);
+    Button y2            = new JoystickButton(xbox2,      4);
+    Button lb2           = new JoystickButton(xbox2,      5);
+    Button rb2           = new JoystickButton(xbox2,      6);
+    Button start2		 = new JoystickButton(xbox2,      7);
+    Button select2       = new JoystickButton(xbox2,      8);
+    Button l32           = new JoystickButton(xbox2,      9);
+    Button r32           = new JoystickButton(xbox2,      10);
+    
     
     public OI() {
     	//button1.whileHeld  ();
@@ -84,16 +100,22 @@ public class OI {
     	
     	//button6.whileHeld (new ArmToFloor());
     	//button7.whenPressed (new FrontArmEncoderRead());
-    	r3.whileHeld(new TomahawksUp());
-    	l3.whileHeld(new TomahawksDown());
-    	rb.whileHeld(new Intake());
-    	lb.whileHeld(new Shoot());
-    	y.whileHeld(new RetractClimber());
-    	a.whileHeld(new ExtendClimber());
+    	
+    	rb2.whileHeld(new TomahawksUp());
+    	lb2.whileHeld(new TomahawksDown());
+    	a2.whenPressed (new OneStickTankXbox(xbox2));
+    	b2.whenPressed (new TwoStickTankXbox(xbox2));
+    	x2.whenPressed (new OneStickArcadeXbox(xbox2));
+    	y2.whenPressed (new TwoStickArcadeXbox(xbox2));
+    	
+    	lb.whileHeld(new Intake());
+    	rb.whileHeld(new Shoot());
+    	a.whileHeld(new RetractClimber());
+    	y.whileHeld(new ExtendClimber());
     	start.whileHeld(new ArmToFloor());
     	select.whileHeld(new ArmUp());
-    	b.whileHeld(new WinchRelease());
-    	x.whileHeld(new WinchRetract());
+    	x.whileHeld(new WinchRelease());
+    	b.whileHeld(new WinchRetract());
   
     	//button8.whileHeld ();
     	//button9.whileHeld ();
