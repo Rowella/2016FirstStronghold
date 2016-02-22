@@ -29,6 +29,8 @@ public class DriveSubsystem extends Subsystem {
 	
 	double speed;
 	double acceleration;
+	public String accelerationType;
+	public String speedType;
 	
 	double leftSpeed = 0;
 	double rightSpeed = 0;
@@ -38,19 +40,23 @@ public class DriveSubsystem extends Subsystem {
 
 	
 	public void highSpeed(){
+		speedType = "high";
     	speed = 1;
     }
     
     public void lowSpeed(){
     	speed = 0.6;
+    	speedType = "low";
     }
     
     public void highAcceleration(){
     	acceleration = 0.05;
+    	accelerationType = "high";
     }
     
     public void lowAcceleration(){
     	acceleration = 0.025;
+    	accelerationType = "low";
     }
     // Put methods for controlling this subsystem
     // here. Call these from Commands.

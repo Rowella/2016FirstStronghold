@@ -17,8 +17,6 @@ public class StartUpSpeed extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	SmartDashboard.putString("Speed setting", "low");
-    	SmartDashboard.putString("Acceleration setting", "low");
     }
 
     // Called repeatedly when this Command is scheduled to run

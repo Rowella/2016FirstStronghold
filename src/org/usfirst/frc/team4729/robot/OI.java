@@ -102,6 +102,8 @@ public class OI {
     	button5.whenPressed (new TwoStickArcade(leftStick, rightStick));
     	button6.whenPressed (new ToggleSpeed());
     	button7.whenPressed (new ToggleAcceleration());
+    	button1.whileHeld (new TomahawksDown());
+    	rightButton1.whileHeld (new TomahawksUp());
     	
     	//button6.whileHeld (new ArmToFloor());
     	//button7.whenPressed (new FrontArmEncoderRead());
@@ -112,6 +114,8 @@ public class OI {
     	b2.whenPressed (new TwoStickTankXbox(xbox2));
     	x2.whenPressed (new OneStickArcadeXbox(xbox2));
     	y2.whenPressed (new TwoStickArcadeXbox(xbox2));
+    	start2.whenPressed (new ToggleSpeed());
+    	select2.whenPressed(new ToggleAcceleration());
     	
     	lb.whileHeld(new Intake());
     	rb.whileHeld(new Shoot());
