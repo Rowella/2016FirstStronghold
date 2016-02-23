@@ -40,8 +40,8 @@ public class DriveSubsystem extends Subsystem {
 
 	
 	public void highSpeed(){
+		speed = 1;
 		speedType = "high";
-    	speed = 1;
     }
     
     public void lowSpeed(){
@@ -119,14 +119,14 @@ public class DriveSubsystem extends Subsystem {
     	/*if (Robot.lEDMovement == true){
     		Robot.lED.set(-leftSpeed*speed, -rightSpeed*speed);
     	} */
-    	driveTrain.arcadeDrive(desiredMove * 0.5, desiredTurn * 0.5);
+    	//driveTrain.arcadeDrive(desiredMove * 0.5, desiredTurn * 0.5);
     	//driveTrain.arcadeDrive(forwardSpeed*speed, turnSpeed*speed);
     }
     
     
     
     public void tank (double desiredLeft, double desiredRight) {
-    	if ((desiredLeft < 0.1) && (desiredLeft > -0.1)){
+    /*	if ((desiredLeft < 0.1) && (desiredLeft > -0.1)){
     		desiredLeft = 0;
     		leftSpeed = 0;
     	}
@@ -141,7 +141,7 @@ public class DriveSubsystem extends Subsystem {
     	if (((desiredRight > 0) && (rightSpeed < 0)) || ((desiredRight < 0) && (rightSpeed > 0))){
     		rightSpeed = 0;
     	}
-    	
+    */	
     	if (Math.abs(desiredLeft) < Math.abs(leftSpeed)){
     		leftSpeed = desiredLeft;
     	}
