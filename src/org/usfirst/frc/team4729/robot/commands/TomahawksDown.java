@@ -28,10 +28,12 @@ public class TomahawksDown extends Command {
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
         if (Robot.limitSwitch.isUpper()) {
+        	SmartDashboard.putString("Tomahawk limit", "At lower limit");
         	return true;
         }
         
         else {
+        	SmartDashboard.putString("Tomahawk limit", "Clear");
         	return false;
         }
     }
