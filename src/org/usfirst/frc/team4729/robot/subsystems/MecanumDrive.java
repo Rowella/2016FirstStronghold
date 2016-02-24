@@ -93,7 +93,7 @@ public class MecanumDrive extends Subsystem {
     	}
     	
     	
-    	
+    	//weird maths stuff here for correcting angle in desiredXMove and desired YMove
     	
     	currentXMove += (desiredXMove - currentXMove)*mecAccel;
     	currentYMove += (desiredYMove - currentYMove)*mecAccel;
