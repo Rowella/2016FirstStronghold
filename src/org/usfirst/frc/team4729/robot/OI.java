@@ -95,63 +95,49 @@ public class OI {
     
     
     public OI() {
-    	//button1.whileHeld  ();
-    	button2.whenPressed (new OneStickTank(leftStick));
-    	button3.whenPressed (new TwoStickTank(leftStick, rightStick));
-    	button4.whenPressed (new OneStickArcade(leftStick));
-    	button5.whenPressed (new TwoStickArcade(leftStick, rightStick));
-    	button6.whenPressed (new ToggleSpeed());
-    	button7.whenPressed (new ToggleAcceleration());
-    	button1.whileHeld (new TomahawksDown());
-    	rightButton1.whileHeld (new TomahawksUp());
+    	button1.whileHeld         (new TomahawksDown());
+    	button2.whenPressed       (new OneStickTank(leftStick));
+    	button3.whenPressed       (new TwoStickTank(leftStick, rightStick));
+    	button4.whenPressed       (new OneStickArcade(leftStick));
+    	button5.whenPressed       (new TwoStickArcade(leftStick, rightStick));
+    	button6.whenPressed       (new ToggleSpeed());
+    	button7.whenPressed       (new ToggleAcceleration());
+    	//button8.whileHeld       ();
+    	//button9.whileHeld       ();
+    	//button10.whileHeld      ();
+    	//button11.whileHeld      ();
     	
-    	//button6.whileHeld (new ArmToFloor());
-    	//button7.whenPressed (new FrontArmEncoderRead());
-    	
-    	rb2.whileHeld(new TomahawksUp());
-    	lb2.whileHeld(new TomahawksDown());
-    	a2.whenPressed (new OneStickTankXbox(xbox2));
-    	b2.whenPressed (new TwoStickTankXbox(xbox2));
-    	x2.whenPressed (new OneStickArcadeXbox(xbox2));
-    	y2.whenPressed (new TwoStickArcadeXbox(xbox2));
-    	start2.whenPressed (new ToggleSpeed());
-    	select2.whenPressed(new ToggleAcceleration());
-    	
-    	lb.whileHeld(new Intake());
-    	rb.whileHeld(new Shoot());
-    	a.whileHeld(new RetractClimber());
-    	y.whileHeld(new ExtendClimber());
-    	start.whileHeld(new ArmToFloor());
-    	select.whileHeld(new ArmUp());
-    	x.whileHeld(new WinchRelease());
-    	b.whileHeld(new WinchRetract());
-  
-    	//button8.whileHeld ();
-    	//button9.whileHeld ();
-    	//button10.whileHeld ();
-    	//button11.whileHeld ();
-    	//rightButton1.whenPressed ();
-    	//rightButton2.whileHeld ();
-    	//rightButton3.whenPressed ();
-    	//rightButton4.whileHeld ();
-    	//rightButton5.whileHeld ();
-    	//rightButton6.whileHeld ();
-    	//rightButton7.whileHeld ();
-    	//rightButton8.whileHeld ();
-    	//rightButton9.whileHeld ();
+    	rightButton1.whenPressed  (new TomahawksUp());
+    	//rightButton2.whileHeld  ();
+    	//rightButton3.whileHeld  ();
+    	//rightButton4.whileHeld  ();
+    	//rightButton5.whileHeld  ();
+    	//rightButton6.whileHeld  ();
+    	//rightButton7.whileHeld  ();
+    	//rightButton8.whileHeld  ();
+    	//rightButton9.whileHeld  ();
     	//rightButton10.whileHeld ();
     	//rightButton11.whileHeld ();
-    	//a.whileHeld ();
-    	//b.whileHeld ();
-    	//x.whileHeld ();
-    	//y.whileHeld ();
-    	//lb.whileHeld ();
-    	//rb.whileHeld ();
-    	//start.whileHeld();
-    	//select.whileHeld();
-    	//l3.whileHeld ();
-    	//r3.whileHeld ();
-
+    	a.whileHeld               (new RetractClimber());
+    	b.whileHeld               (new WinchRetract());
+    	x.whileHeld               (new WinchRelease());
+    	y.whileHeld               (new ExtendClimber());
+    	lb.whileHeld              (new Intake());
+    	rb.whileHeld              (new Shoot());
+    	start.whileHeld           (new ArmToFloor());
+    	select.whileHeld          (new ArmUp());
+    	//l3.whileHeld            ();
+    	//r3.whileHeld            ();
+    	a2.whenPressed            (new OneStickTankXbox(xbox2));
+    	b2.whenPressed            (new TwoStickTankXbox(xbox2));
+    	x2.whenPressed            (new OneStickArcadeXbox(xbox2));
+    	y2.whenPressed            (new TwoStickArcadeXbox(xbox2));
+    	lb2.whileHeld             (new TomahawksDown());
+    	rb2.whileHeld             (new TomahawksUp());
+    	start2.whenPressed        (new ToggleSpeed());
+    	select2.whenPressed       (new ToggleAcceleration());
+    	//l32.whileHeld           ();
+    	//r32.whileHeld           ();	
     	
     	
     }
