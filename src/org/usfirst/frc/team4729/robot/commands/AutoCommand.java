@@ -32,7 +32,7 @@ public class AutoCommand extends Command {
     	SmartDashboard.putBoolean("isFinished", isFinished);
     	SmartDashboard.putBoolean("onObstacle", onObstacle);
     	SmartDashboard.putNumber("Timer",timer.get());
-    	if (timer.get() > 0.4){
+    	if (timer.get() > 0.3){
     		primed = true;
     	}
     	if (isFinished){
@@ -43,7 +43,8 @@ public class AutoCommand extends Command {
     		} else {
     			Robot.shooter.stop();
     		}*/
-    	} else {
+    	} 
+    	else {
     		Robot.driveSubsystem.tank(1, 1);
     		SmartDashboard.putString("Progress", "Running");
     		if ((!Robot.accelerometer.isFlat()) && (primed)){
