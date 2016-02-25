@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.command.Command;
 public class LEDCycle extends Command {
 
     public LEDCycle() {
-    	//requires(Robot.lED);
+    	requires(Robot.lED);
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
@@ -21,7 +21,7 @@ public class LEDCycle extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    //	Robot.lED.cycleForward();
+    	Robot.lED.cycleForward();
     }
 
     // Make this return true when this Command no longer needs to run execute()

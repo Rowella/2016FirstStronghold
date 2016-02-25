@@ -3,14 +3,13 @@ package org.usfirst.frc.team4729.robot.commands;
 import org.usfirst.frc.team4729.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
  */
-public class LEDDistance extends Command {
+public class ToggleLED extends Command {
 
-    public LEDDistance() {
+    public ToggleLED() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
@@ -21,8 +20,12 @@ public class LEDDistance extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.lEDMovement = false;
-    	SmartDashboard.putBoolean("ledMovement", false);
+    	if (Robot.lED.lEDOn == true) {
+    		Robot.lED.lEDOn = false;
+    	}
+    	else {
+    		Robot.lED.lEDOn = true;
+    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()

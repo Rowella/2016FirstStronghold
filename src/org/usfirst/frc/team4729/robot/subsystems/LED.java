@@ -11,18 +11,27 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  *
  */
 public class LED extends Subsystem {
-/*	Victor ledA = new Victor(RobotMap.LED_A);
+	Victor ledA = new Victor(RobotMap.LED_A);
 	Victor ledB = new Victor(RobotMap.LED_B);
 	Timer timer = new Timer();
+	public boolean lEDOn = false;
 	static int counter = 0;
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
-*/
-    public void initDefaultCommand() {
+
+	public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
- /*   
+     
+	public void lEDOn() {
+		lEDOn = true;
+	}
+	
+	public void LEDOff() {
+		lEDOn = false;
+	}
+	
     public void counterReset(){
     	counter = 0;
     }
@@ -63,6 +72,6 @@ public class LED extends Subsystem {
     public void set(double a, double b){
     	ledA.set(a);
     	ledB.set(b);
-    } */
+    } 
 }
 
