@@ -19,6 +19,7 @@ import org.usfirst.frc.team4729.robot.commands.RetractClimber;
 import org.usfirst.frc.team4729.robot.commands.Shoot;
 import org.usfirst.frc.team4729.robot.commands.ToggleAcceleration;
 import org.usfirst.frc.team4729.robot.commands.ToggleLED;
+import org.usfirst.frc.team4729.robot.commands.ToggleLEDMode;
 import org.usfirst.frc.team4729.robot.commands.ToggleSpeed;
 import org.usfirst.frc.team4729.robot.commands.TomahawksDown;
 import org.usfirst.frc.team4729.robot.commands.TomahawksUp;
@@ -105,9 +106,9 @@ public class OI {
     	button5.whenPressed       (new TwoStickArcade(leftStick, rightStick));
     	button6.whenPressed       (new ToggleSpeed());
     	button7.whenPressed       (new ToggleAcceleration());
-    	button8.whenPressed       ((Robot.lED.lEDOn == true) ? new LEDCycle() : null);
-    	button9.whenPressed       ((Robot.lED.lEDOn == true) ? new LEDMovement() : null);
-    	button10.whenPressed      (new ToggleLED());
+    	button8.whenPressed       (new ToggleLEDMode());
+    	button9.whenPressed       (new ToggleLED());
+    	//button10.whenPressed    ();
     	//button11.whileHeld      ();
     	
     	rightButton1.whenPressed  (new TomahawksUp());
