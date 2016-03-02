@@ -103,7 +103,7 @@ public class Robot extends IterativeRobot {
         if (autonomousCommand != null) autonomousCommand.cancel();
         Joystick leftStick = new Joystick(0);
         Joystick rightStick = new Joystick(1);
-        TwoStickArcade twoStickTank = new TwoStickArcade(leftStick, rightStick);
+        TwoStickArcade twoStickArcade = new TwoStickArcade(leftStick, rightStick);
         StartUpSpeed startUpSpeed = new StartUpSpeed();        
     }
 

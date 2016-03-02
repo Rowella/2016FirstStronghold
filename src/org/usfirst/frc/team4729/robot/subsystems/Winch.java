@@ -17,11 +17,11 @@ public class Winch extends Subsystem {
     // here. Call these from Commands.
 	
 public void extend() {
-		climber.set(1);
+		climber.set(-1);
 	}
 	
 	public void retract() {
-		climber.set(-1);
+		climber.set(1);
 	}
 	
 	public void stop() {

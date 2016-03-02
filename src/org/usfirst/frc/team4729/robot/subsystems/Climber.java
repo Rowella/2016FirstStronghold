@@ -14,11 +14,11 @@ public class Climber extends Subsystem {
 	
 	public void extend() {
 
-		measuringTape.set(0.5);
+		measuringTape.set(-0.5);
 	}
     
 	public void retract() {
-		measuringTape.set(-0.5);
+		measuringTape.set(0.5);
 	}
 	
 	public void stop(){
