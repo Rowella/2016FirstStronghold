@@ -4,8 +4,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
-import org.usfirst.frc.team4729.robot.commands.ArmToFloor;
-import org.usfirst.frc.team4729.robot.commands.ArmUp;
+import org.usfirst.frc.team4729.robot.commands.ArmChange;
 import org.usfirst.frc.team4729.robot.commands.ExtendClimber;
 import org.usfirst.frc.team4729.robot.commands.FrontArmEncoderRead;
 import org.usfirst.frc.team4729.robot.commands.Intake;
@@ -124,13 +123,13 @@ public class OI {
     	//rightButton11.whileHeld ();
     	
     	a.whileHeld               (new ExtendClimber());
-    	//b.whileHeld               (new WinchRelease());
-    	x.whileHeld               (new WinchRetract());
+    	//b.whileHeld             (new WinchRelease());
+    	x.whenPressed             (new WinchRetract());
     	y.whileHeld               (new RetractClimber());
     	lb.whileHeld              (new Shoot());
     	rb.whileHeld              (new Intake());
-    	start.whileHeld           (new ArmToFloor());
-    	select.whileHeld          (new ArmUp());
+    	start.whileHeld           (new ArmChange());
+    	//select.whileHeld        ();
     	//l3.whileHeld            ();
     	//r3.whileHeld            ();
     	

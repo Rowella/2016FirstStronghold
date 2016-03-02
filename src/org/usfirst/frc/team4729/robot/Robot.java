@@ -17,6 +17,7 @@ import org.usfirst.frc.team4729.robot.subsystems.DriveSubsystem;
 import org.usfirst.frc.team4729.robot.subsystems.FrontArm;
 import org.usfirst.frc.team4729.robot.subsystems.LED;
 import org.usfirst.frc.team4729.robot.subsystems.LimitSwitch;
+import org.usfirst.frc.team4729.robot.subsystems.Pot;
 import org.usfirst.frc.team4729.robot.subsystems.Shooter;
 import org.usfirst.frc.team4729.robot.subsystems.Tomahawk;
 import org.usfirst.frc.team4729.robot.subsystems.Winch;
@@ -47,6 +48,7 @@ public class Robot extends IterativeRobot {
 	public static Tomahawk tomahawk;
 	public static Winch winch;
 	public static LimitSwitch limitSwitch;
+	public static Pot pot;
     Command autonomousCommand;
 
 
