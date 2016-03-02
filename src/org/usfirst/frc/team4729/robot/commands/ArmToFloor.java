@@ -19,7 +19,13 @@ public class ArmToFloor extends Command{
 	}
 	
 	protected boolean isFinished() {
-		return false;
+    	if (Robot.limitSwitch.isArmUpper() && Robot.limitSwitch.isArmLower()) {
+        	return true;
+        }
+        
+        else {
+        	return false;
+    }
 	}
 
 	protected void end() {

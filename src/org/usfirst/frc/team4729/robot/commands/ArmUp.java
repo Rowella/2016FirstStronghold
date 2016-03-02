@@ -3,6 +3,7 @@ package org.usfirst.frc.team4729.robot.commands;
 import org.usfirst.frc.team4729.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
@@ -25,7 +26,13 @@ public class ArmUp extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+    	if (Robot.limitSwitch.isArmUpper() && Robot.limitSwitch.isArmLower()) {
+        	return true;
+        }
+        
+        else {
+        	return false;
+        }
     }
 
     // Called once after isFinished returns true

@@ -13,6 +13,8 @@ public class LimitSwitch extends Subsystem {
 	
 	DigitalInput switchUpper = new DigitalInput(1);
 	DigitalInput switchLower = new DigitalInput(0);
+	DigitalInput switchArmLower = new DigitalInput(2);
+	DigitalInput switchArmUpper = new DigitalInput(3);
 
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
@@ -20,11 +22,19 @@ public class LimitSwitch extends Subsystem {
     }
     
     public boolean isUpper() {
-    	return switchUpper.get() == true;
+    	return switchUpper.get();
     }
     
     public boolean isLower() {
-    	return switchLower.get() == true;
+    	return switchLower.get();
+    }
+    
+    public boolean isArmLower() {
+    	return switchArmLower.get();
+    }
+    
+    public boolean isArmUpper() {
+    	return switchArmUpper.get();
     }
 }
 
