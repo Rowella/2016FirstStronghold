@@ -5,6 +5,8 @@ import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 import org.usfirst.frc.team4729.robot.commands.ArmChange;
+import org.usfirst.frc.team4729.robot.commands.CamDown;
+import org.usfirst.frc.team4729.robot.commands.CamUp;
 import org.usfirst.frc.team4729.robot.commands.ExtendClimber;
 import org.usfirst.frc.team4729.robot.commands.FrontArmEncoderRead;
 import org.usfirst.frc.team4729.robot.commands.Intake;
@@ -111,8 +113,8 @@ public class OI {
     	//button11.whileHeld      ();
     	
     	rightButton1.whenPressed  (new TomahawksUp());
-    	//rightButton2.whileHeld  ();
-    	//rightButton3.whileHeld  ();
+    	rightButton2.whileHeld    (new CamDown());
+    	rightButton3.whileHeld    (new CamUp());
     	//rightButton4.whileHeld  ();
     	//rightButton5.whileHeld  ();
     	//rightButton6.whileHeld  ();

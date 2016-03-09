@@ -12,6 +12,7 @@ import org.usfirst.frc.team4729.robot.commands.StartUpSpeed;
 import org.usfirst.frc.team4729.robot.commands.TwoStickArcade;
 import org.usfirst.frc.team4729.robot.commands.TwoStickTank;
 import org.usfirst.frc.team4729.robot.subsystems.Accelerometer;
+import org.usfirst.frc.team4729.robot.subsystems.CamServo;
 import org.usfirst.frc.team4729.robot.subsystems.Climber;
 import org.usfirst.frc.team4729.robot.subsystems.DriveSubsystem;
 import org.usfirst.frc.team4729.robot.subsystems.FrontArm;
@@ -49,6 +50,7 @@ public class Robot extends IterativeRobot {
 	public static Winch winch;
 	public static LimitSwitch limitSwitch;
 	public static Pot pot;
+	public static CamServo camServo;
     Command autonomousCommand;
 
 
@@ -69,6 +71,7 @@ public class Robot extends IterativeRobot {
 		tomahawk = new Tomahawk();
 		winch = new Winch();
 		limitSwitch = new LimitSwitch();
+		camServo = new CamServo();
     }
 	
 	/**
