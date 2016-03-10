@@ -63,7 +63,13 @@ public class AutoCommand extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+    	if ((onObstacle) && (timer.get() > 0.7)){
+			return true;
+    	}
+    	
+    	else {
+    		return false;
+    	}
     }
 
     // Called once after isFinished returns true
