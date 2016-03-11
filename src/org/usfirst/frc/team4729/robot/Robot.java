@@ -8,11 +8,13 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 import org.usfirst.frc.team4729.robot.commands.AutoCommand;
+import org.usfirst.frc.team4729.robot.commands.CameraAuto1;
 import org.usfirst.frc.team4729.robot.commands.StartUpSpeed;
 import org.usfirst.frc.team4729.robot.commands.TwoStickArcade;
 import org.usfirst.frc.team4729.robot.commands.TwoStickTank;
 import org.usfirst.frc.team4729.robot.subsystems.Accelerometer;
 import org.usfirst.frc.team4729.robot.subsystems.CamServo;
+import org.usfirst.frc.team4729.robot.subsystems.CameraReader;
 import org.usfirst.frc.team4729.robot.subsystems.Climber;
 import org.usfirst.frc.team4729.robot.subsystems.DriveSubsystem;
 import org.usfirst.frc.team4729.robot.subsystems.FrontArm;
@@ -51,6 +53,7 @@ public class Robot extends IterativeRobot {
 	public static LimitSwitch limitSwitch;
 	public static Pot pot;
 	public static CamServo camServo;
+	public static CameraReader cameraReader;
     Command autonomousCommand;
 
 
@@ -66,12 +69,15 @@ public class Robot extends IterativeRobot {
 		climber = new Climber();
 		frontArm = new FrontArm();
 		lED = new LED();
-		autonomousCommand = new AutoCommand();
+		//autonomousCommand = new AutoCommand();
+		autonomousCommand = new CameraAuto1();
 		oi = new OI();
 		tomahawk = new Tomahawk();
 		winch = new Winch();
 		limitSwitch = new LimitSwitch();
 		camServo = new CamServo();
+		cameraReader = new CameraReader();
+		
     }
 	
 	/**

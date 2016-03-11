@@ -8,7 +8,8 @@ import edu.wpi.first.wpilibj.networktables.NetworkTable;
  */
 public class CameraReader extends Subsystem {
     NetworkTable table;
-	float centre = 159;
+    NetworkTable blobCount;
+	float centreX = 159;
 	double[] defaultValue = new double[0];
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
@@ -19,9 +20,10 @@ public class CameraReader extends Subsystem {
     }
     
     public boolean checkCentre() {
-    	table = NetworkTable.getTable("BLOBS");
+    	table = NetworkTable.getTable("");
+    	  	
     	double[] coords = table.getNumberArray("BLOBS", defaultValue);
-    	if (coords[0] <= centre) {
+    	if (coords[0] <= centreX) {
     		return true;
     	}
     	else {
