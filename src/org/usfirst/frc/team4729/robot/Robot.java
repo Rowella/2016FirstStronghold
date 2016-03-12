@@ -25,6 +25,7 @@ import org.usfirst.frc.team4729.robot.subsystems.Shooter;
 import org.usfirst.frc.team4729.robot.subsystems.Tomahawk;
 import org.usfirst.frc.team4729.robot.subsystems.Winch;
 import org.usfirst.frc.team4729.robot.commands.ExampleCommand;
+import org.usfirst.frc.team4729.robot.commands.GoalAutonomous;
 import org.usfirst.frc.team4729.robot.subsystems.ExampleSubsystem;
 
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
@@ -70,7 +71,7 @@ public class Robot extends IterativeRobot {
 		frontArm = new FrontArm();
 		lED = new LED();
 		//autonomousCommand = new AutoCommand();
-		autonomousCommand = new CameraAuto1();
+		autonomousCommand = new GoalAutonomous();
 		oi = new OI();
 		tomahawk = new Tomahawk();
 		winch = new Winch();

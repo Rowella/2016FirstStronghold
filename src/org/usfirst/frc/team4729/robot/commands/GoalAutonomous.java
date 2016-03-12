@@ -11,6 +11,7 @@ public class GoalAutonomous extends CommandGroup {
     	addSequential(new TomahawksDown());
     	addSequential(new CameraAuto1());
     	addSequential(new AutoTurn());
+    	addSequential(new TomahawksUp());
     	addSequential(new CameraAuto2());
     	addSequential(new AutoShoot());
         // Add Commands here:

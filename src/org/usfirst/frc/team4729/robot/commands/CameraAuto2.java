@@ -9,11 +9,11 @@ import edu.wpi.first.wpilibj.command.Command;
  *
  */
 public class CameraAuto2 extends Command {
-	Encoder leftWheel = new Encoder(1,2);
-	Encoder rightWheel= new Encoder(3,4);
+	Encoder leftWheel = new Encoder(1,2, false, Encoder.EncodingType.k1X);
+	Encoder rightWheel= new Encoder(3,4, false, Encoder.EncodingType.k1X);
 	
 	double wheelAverage;
-	double distance = 0;
+	double distance = 160;
 	double spinDistance = 15.3*Math.PI/360;
 	double speed = 0.6;
 	boolean isFinished = false;
@@ -32,12 +32,13 @@ public class CameraAuto2 extends Command {
     	leftWheel.reset();
     	rightWheel.startLiveWindowMode();
     	rightWheel.reset();
+    	Robot.camServo.camDown();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	wheelAverage = Math.abs(leftWheel.get() - rightWheel.get());
-        if (wheelAverage > distance) {        	
+        if (wheelAverage > distance*spinDistance) {        	
         	Robot.driveSubsystem.tank(0, 0);
         	isFinished = true;        	
         }

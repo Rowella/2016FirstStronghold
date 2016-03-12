@@ -20,6 +20,10 @@ public class CamServo extends Subsystem {
         //setDefaultCommand(new MySpecialCommand());
     }
     
+    public void autoAngle() {
+    	camServo.setAngle(35);
+    }
+    
     public void camDown() {
     	double currentAng = camServo.getAngle();
     	camServo.setAngle(currentAng-speed);
