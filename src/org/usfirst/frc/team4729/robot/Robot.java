@@ -4,6 +4,7 @@ package org.usfirst.frc.team4729.robot;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
@@ -55,7 +56,7 @@ public class Robot extends IterativeRobot {
 	public static Pot pot;
 	public static CamServo camServo;
 	public static CameraReader cameraReader;
-    Command autonomousCommand;
+    CommandGroup autonomousCommand;
 
 
     /**

@@ -124,13 +124,13 @@ public class OI {
     	//rightButton10.whileHeld ();
     	//rightButton11.whileHeld ();
     	
-  	    a.whileHeld               (new ExtendClimber());
-    	//b.whileHeld             (new WinchRelease());
+  	    a.whileHeld               (new RetractClimber());
+    	b.whileHeld               (new ArmChange());
     	x.whenPressed             (new WinchRetract());
-    	y.whileHeld               (new RetractClimber());
+    	y.whileHeld               (new ExtendClimber());
     	lb.whileHeld              (new Shoot());
     	rb.whileHeld              (new Intake());
-    	start.whileHeld           (new ArmChange());
+    	//start.whileHeld         ();
     	//select.whileHeld        ();
     	//l3.whileHeld            ();
     	//r3.whileHeld            ();
