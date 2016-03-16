@@ -37,7 +37,7 @@ public class CameraAuto1 extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	wheelAverage = Math.abs(leftWheel.get() - rightWheel.get());
+    	wheelAverage = (leftWheel.get() + rightWheel.get())/2;
         if (wheelAverage*spinDistance > distance*spinDistance) {
         	Robot.driveSubsystem.tank(0, 0);
         	isFinished = true;
