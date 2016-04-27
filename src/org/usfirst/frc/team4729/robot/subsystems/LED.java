@@ -14,8 +14,9 @@ public class LED extends Subsystem {
 	Victor ledA = new Victor(RobotMap.LED_A);
 	Victor ledB = new Victor(RobotMap.LED_B);
 	Timer timer = new Timer();
-	public boolean lEDOn = false;
+	public boolean lEDOn = true;
 	static int counter = 0;
+//	public boolean lEDswitch  = 0;
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
@@ -63,6 +64,13 @@ public class LED extends Subsystem {
     	}
 
     }
+    
+ /*   public void Alliance() {
+    	if (lEDswitch == 1) {
+    		lEDSwitch
+    	}
+    }
+  */  
     public void off(){
     	ledA.set(0);
     	ledB.set(0);

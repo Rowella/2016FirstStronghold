@@ -13,6 +13,7 @@ public class TomahawksDown extends Command {
     public TomahawksDown() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
+    	//requires(Robot.tomahawk);
     }
 
     // Called just before this Command runs the first time
@@ -28,7 +29,7 @@ public class TomahawksDown extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        if (Robot.limitSwitch.isUpper()) {
+      /*  if (Robot.limitSwitch.isUpper()) {
         	SmartDashboard.putString("Tomahawk limit", "At lower limit");
         	return true;
         }
@@ -36,11 +37,13 @@ public class TomahawksDown extends Command {
         else {
         	SmartDashboard.putString("Tomahawk limit", "Clear");
         	return false;
-        }
+        } */
+    	return false;
     }
 
     // Called once after isFinished returns true
     protected void end() {
+    	//Robot.tomahawk.stop();
     }
 
     // Called when another command which requires one or more of the same

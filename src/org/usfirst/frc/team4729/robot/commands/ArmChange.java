@@ -20,7 +20,7 @@ public class ArmChange extends Command{
 			}
 			else {
 				Robot.frontArm.lower();
-			}
+			}	
 	}
 	
 	protected boolean isFinished() {

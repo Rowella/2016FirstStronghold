@@ -1,5 +1,6 @@
 package org.usfirst.frc.team4729.robot.subsystems;
 
+import org.usfirst.frc.team4729.robot.Robot;
 import org.usfirst.frc.team4729.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.Talon;
@@ -14,11 +15,11 @@ public class Climber extends Subsystem {
 	
 	public void extend() {
 
-		measuringTape.set(-0.5);
+		measuringTape.set(-0.9*Robot.speedSubsystem.universalSpeed);
 	}
     
 	public void retract() {
-		measuringTape.set(0.5);
+		measuringTape.set(0.7*Robot.speedSubsystem.universalSpeed);
 	}
 	
 	public void stop(){

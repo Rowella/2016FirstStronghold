@@ -1,5 +1,6 @@
 package org.usfirst.frc.team4729.robot.subsystems;
 
+import org.usfirst.frc.team4729.robot.Robot;
 import org.usfirst.frc.team4729.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.Servo;
@@ -10,7 +11,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class CamServo extends Subsystem {
 	Servo camServo = new Servo(RobotMap.CAMSERVO);
-	float speed = 1;
+	float speed = 5;
     
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
@@ -21,17 +22,20 @@ public class CamServo extends Subsystem {
     }
     
     public void autoAngle() {
-    	camServo.setAngle(35);
+    	double currentAng = camServo.getAngle();
+    	while (currentAng >= 35) {
+    		camServo.setAngle(currentAng-speed);
+    	}
     }
     
     public void camDown() {
     	double currentAng = camServo.getAngle();
-    	camServo.setAngle(currentAng-speed);
+    	camServo.setAngle((currentAng+speed)*Robot.speedSubsystem.universalSpeed);
     }
     
     public void camUp() {
     	double currentAng = camServo.getAngle();
-    	camServo.setAngle(currentAng+speed);
+    	camServo.setAngle((currentAng-speed)*Robot.speedSubsystem.universalSpeed);
     }
     
     public void stop() {

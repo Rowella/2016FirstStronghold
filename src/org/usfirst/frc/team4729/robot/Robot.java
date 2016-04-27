@@ -9,7 +9,12 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 import org.usfirst.frc.team4729.robot.commands.AutoCommand;
+import org.usfirst.frc.team4729.robot.commands.AutoTurn;
 import org.usfirst.frc.team4729.robot.commands.CameraAuto1;
+import org.usfirst.frc.team4729.robot.commands.CameraTime1;
+import org.usfirst.frc.team4729.robot.commands.DudAuto;
+import org.usfirst.frc.team4729.robot.commands.LEDCycle;
+import org.usfirst.frc.team4729.robot.commands.LEDMovement;
 import org.usfirst.frc.team4729.robot.commands.StartUpSpeed;
 import org.usfirst.frc.team4729.robot.commands.TwoStickArcade;
 import org.usfirst.frc.team4729.robot.commands.TwoStickTank;
@@ -23,6 +28,7 @@ import org.usfirst.frc.team4729.robot.subsystems.LED;
 import org.usfirst.frc.team4729.robot.subsystems.LimitSwitch;
 import org.usfirst.frc.team4729.robot.subsystems.Pot;
 import org.usfirst.frc.team4729.robot.subsystems.Shooter;
+import org.usfirst.frc.team4729.robot.subsystems.SpeedSubsystem;
 import org.usfirst.frc.team4729.robot.subsystems.Tomahawk;
 import org.usfirst.frc.team4729.robot.subsystems.Winch;
 import org.usfirst.frc.team4729.robot.commands.ExampleCommand;
@@ -56,7 +62,8 @@ public class Robot extends IterativeRobot {
 	public static Pot pot;
 	public static CamServo camServo;
 	public static CameraReader cameraReader;
-    CommandGroup autonomousCommand;
+	public static SpeedSubsystem speedSubsystem;
+    Command autonomousCommand;
 
 
     /**
@@ -71,14 +78,15 @@ public class Robot extends IterativeRobot {
 		climber = new Climber();
 		frontArm = new FrontArm();
 		lED = new LED();
-		//autonomousCommand = new AutoCommand();
-		autonomousCommand = new GoalAutonomous();
+		autonomousCommand = new DudAuto();
 		oi = new OI();
 		tomahawk = new Tomahawk();
 		winch = new Winch();
 		limitSwitch = new LimitSwitch();
 		camServo = new CamServo();
 		cameraReader = new CameraReader();
+		speedSubsystem = new SpeedSubsystem();
+		
 		
     }
 	
@@ -116,8 +124,12 @@ public class Robot extends IterativeRobot {
         if (autonomousCommand != null) autonomousCommand.cancel();
         Joystick leftStick = new Joystick(0);
         Joystick rightStick = new Joystick(1);
-        TwoStickArcade twoStickArcade = new TwoStickArcade(leftStick, rightStick);
-        StartUpSpeed startUpSpeed = new StartUpSpeed();        
+        Robot.speedSubsystem.universalSpeed = 1;
+        Robot.driveSubsystem.speed = 1;
+        Robot.driveSubsystem.acceleration = 0.5;
+        Robot.lED.set(1,-1);
+        TwoStickTank twoStickTank = new TwoStickTank(leftStick, rightStick);
+        twoStickTank.start();
     }
 
     /**
