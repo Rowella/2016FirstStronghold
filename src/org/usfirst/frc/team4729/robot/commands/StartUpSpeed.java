@@ -21,8 +21,8 @@ public class StartUpSpeed extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.driveSubsystem.highSpeed();
-    	Robot.driveSubsystem.highAcceleration();
+    	Robot.driveSubsystem.lowSpeed();
+    	Robot.driveSubsystem.lowAcceleration();
     }
 
     // Make this return true when this Command no longer needs to run execute()

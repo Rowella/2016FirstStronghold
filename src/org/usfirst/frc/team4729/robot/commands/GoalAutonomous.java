@@ -8,11 +8,11 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class GoalAutonomous extends CommandGroup {
     
     public  GoalAutonomous() {
-    	//addSequential(new TomahawksDown());
-    	addSequential(new CameraTime1());
-    	//addSequential(new AutoTurn());
-    	//addSequential(new TomahawksUp());
-    	addSequential(new CameraTime2());
+    	addSequential(new TomahawksDown());
+    	addSequential(new CameraAuto1());
+    	addSequential(new AutoTurn());
+    	addSequential(new TomahawksUp());
+    	addSequential(new CameraAuto2());
     	addSequential(new AutoShoot());
         // Add Commands here:
         // e.g. addSequential(new Command1());

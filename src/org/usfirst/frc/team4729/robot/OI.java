@@ -5,14 +5,10 @@ import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 import org.usfirst.frc.team4729.robot.commands.ArmChange;
-import org.usfirst.frc.team4729.robot.commands.ArmDown;
-import org.usfirst.frc.team4729.robot.commands.ArmSpeedToggle;
-import org.usfirst.frc.team4729.robot.commands.ArmUp;
 import org.usfirst.frc.team4729.robot.commands.CamDown;
 import org.usfirst.frc.team4729.robot.commands.CamUp;
 import org.usfirst.frc.team4729.robot.commands.ExtendClimber;
 import org.usfirst.frc.team4729.robot.commands.FrontArmEncoderRead;
-import org.usfirst.frc.team4729.robot.commands.HalfSpeed;
 import org.usfirst.frc.team4729.robot.commands.Intake;
 import org.usfirst.frc.team4729.robot.commands.LEDCycle;
 import org.usfirst.frc.team4729.robot.commands.LEDMovement;
@@ -116,7 +112,7 @@ public class OI {
     	//button10.whenPressed    ();
     	//button11.whileHeld      ();
     	
-    	rightButton1.whileHeld    (new TomahawksUp());
+    	rightButton1.whenPressed  (new TomahawksUp());
     	rightButton2.whileHeld    (new CamDown());
     	rightButton3.whileHeld    (new CamUp());
     	//rightButton4.whileHeld  ();
@@ -129,15 +125,15 @@ public class OI {
     	//rightButton11.whileHeld ();
     	
   	    a.whileHeld               (new RetractClimber());
-    	b.whenPressed             (new ArmSpeedToggle());
-    	x.whileHeld               (new WinchRetract());
+    	b.whileHeld               (new ArmChange());
+    	x.whenPressed             (new WinchRetract());
     	y.whileHeld               (new ExtendClimber());
-    	lb.whileHeld              (new Intake());
-    	rb.whileHeld              (new Shoot());
-    	start.whileHeld           (new ArmUp());
-    	select.whileHeld          (new ArmDown());
-    	l3.whileHeld              (new HalfSpeed());
-    	r3.whileHeld              (new WinchRelease());
+    	lb.whileHeld              (new Shoot());
+    	rb.whileHeld              (new Intake());
+    	//start.whileHeld         ();
+    	//select.whileHeld        ();
+    	//l3.whileHeld            ();
+    	//r3.whileHeld            ();
     	
     	a2.whenPressed            (new OneStickTankXbox(xbox2));
     	b2.whenPressed            (new TwoStickTankXbox(xbox2));

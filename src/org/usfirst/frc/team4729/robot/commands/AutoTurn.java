@@ -29,7 +29,6 @@ public class AutoTurn extends Command {
     		timer.reset();
         	if (Robot.cameraReader.checkCentre()) {
         		Robot.driveSubsystem.arcade(0, 0);
-        		isFinished = true;
         	}
     	}
     }
@@ -37,7 +36,7 @@ public class AutoTurn extends Command {
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
         if (isFinished) {
-        	return true;
+        	return false;
         }
         else {
         	return false;

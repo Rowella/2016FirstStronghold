@@ -1,6 +1,5 @@
 package org.usfirst.frc.team4729.robot.subsystems;
 
-import org.usfirst.frc.team4729.robot.Robot;
 import org.usfirst.frc.team4729.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.Talon;
