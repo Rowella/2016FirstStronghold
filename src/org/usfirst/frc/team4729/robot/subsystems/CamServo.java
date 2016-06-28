@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  *
  */
 public class CamServo extends Subsystem {
-	Servo camServo = new Servo(RobotMap.CAMSERVO);
+	//Servo camServo = new Servo(RobotMap.CAMSERVO);
 	float speed = 1;
     
     // Put methods for controlling this subsystem
@@ -21,21 +21,21 @@ public class CamServo extends Subsystem {
     }
     
     public void autoAngle() {
-    	camServo.setAngle(35);
+    	//camServo.setAngle(35);
     }
     
     public void camDown() {
-    	double currentAng = camServo.getAngle();
-    	camServo.setAngle(currentAng-speed);
+    	//double currentAng = camServo.getAngle();
+    	//camServo.setAngle(currentAng-speed);
     }
     
     public void camUp() {
-    	double currentAng = camServo.getAngle();
-    	camServo.setAngle(currentAng+speed);
+    //	double currentAng = camServo.getAngle();
+    	//camServo.setAngle(currentAng+speed);
     }
     
     public void stop() {
-    	double currentAng = camServo.getAngle();
-    	camServo.setAngle(currentAng);
+    	//double currentAng = camServo.getAngle();
+    	//camServo.setAngle(currentAng);
     }
 }

@@ -8,19 +8,19 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class FrontArm extends Subsystem {
-	Talon frontArmMotor = new Talon(RobotMap.FRONT_ARM_MOTOR);
+//	Talon frontArmMotor = new Talon(RobotMap.FRONT_ARM_MOTOR);
 	//Encoder frontArmEncoder = new Encoder(6, 8);
 	
 	public void lower() {
-		frontArmMotor.set(0.3);
+	//	frontArmMotor.set(0.3);
 	}
 	
 	public void raise() {
-		frontArmMotor.set(-0.3);
+	//	frontArmMotor.set(-0.3);
 	}
 	
 	public void stop() {
-		frontArmMotor.set(0);
+	//	frontArmMotor.set(0);
 	}
 	
 	protected void initDefaultCommand() {

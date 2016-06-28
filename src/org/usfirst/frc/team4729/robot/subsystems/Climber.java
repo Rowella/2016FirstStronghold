@@ -10,20 +10,20 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  *
  */
 public class Climber extends Subsystem {
-	Victor measuringTape = new Victor (RobotMap.MEASURING_TAPE_MOTOR);
+//	Victor measuringTape = new Victor (RobotMap.MEASURING_TAPE_MOTOR);
 	
 	public void extend() {
 
-		measuringTape.set(-0.5);
+	//	measuringTape.set(-0.5);
 	}
     
 	public void retract() {
-		measuringTape.set(0.5);
+	//	measuringTape.set(0.5);
 	}
 	
 	public void stop(){
 
-		measuringTape.set(0);
+	//	measuringTape.set(0);
 	}
 	
     // Put methods for controlling this subsystem

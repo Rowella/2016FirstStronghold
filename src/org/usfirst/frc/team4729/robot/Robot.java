@@ -19,6 +19,7 @@ import org.usfirst.frc.team4729.robot.subsystems.CameraReader;
 import org.usfirst.frc.team4729.robot.subsystems.Climber;
 import org.usfirst.frc.team4729.robot.subsystems.DriveSubsystem;
 import org.usfirst.frc.team4729.robot.subsystems.FrontArm;
+import org.usfirst.frc.team4729.robot.subsystems.Hook;
 import org.usfirst.frc.team4729.robot.subsystems.LED;
 import org.usfirst.frc.team4729.robot.subsystems.LimitSwitch;
 import org.usfirst.frc.team4729.robot.subsystems.Pot;
@@ -57,6 +58,8 @@ public class Robot extends IterativeRobot {
 	public static CamServo camServo;
 	public static CameraReader cameraReader;
     CommandGroup autonomousCommand;
+    
+    public static Hook hook;
 
 
     /**
@@ -79,6 +82,7 @@ public class Robot extends IterativeRobot {
 		limitSwitch = new LimitSwitch();
 		camServo = new CamServo();
 		cameraReader = new CameraReader();
+		
 		
     }
 	
