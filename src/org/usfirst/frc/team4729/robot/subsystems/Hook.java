@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class Hook extends Subsystem {
 	
 	public boolean ready = false;
+	public boolean toggle = false;
 	
 	Talon piston = new Talon(RobotMap.PISTON_MOTOR);
 	Talon winch = new Talon(RobotMap.WINCH_MOTOR);
@@ -51,7 +52,11 @@ public class Hook extends Subsystem {
     }
     
     public void fire() {
-    	solenoid.set(DoubleSolenoid.Value.kForward);
+    		solenoid.set(DoubleSolenoid.Value.kForward);
+    	}
+    
+    public void close() {
+			solenoid.set(DoubleSolenoid.Value.kReverse);
     }
     
     

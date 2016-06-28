@@ -1,6 +1,7 @@
 
 package org.usfirst.frc.team4729.robot;
 
+import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
@@ -83,6 +84,8 @@ public class Robot extends IterativeRobot {
 		camServo = new CamServo();
 		cameraReader = new CameraReader();
 		
+		hook = new Hook();
+		
 		
     }
 	
@@ -124,6 +127,10 @@ public class Robot extends IterativeRobot {
         new StartUpSpeed();
         
         twoStickArcade.start();
+        
+        Compressor c = new Compressor(0);
+        
+        c.setClosedLoopControl(true);
         
     }
 
