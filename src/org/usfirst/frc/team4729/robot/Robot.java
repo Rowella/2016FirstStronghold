@@ -121,7 +121,10 @@ public class Robot extends IterativeRobot {
         Joystick leftStick = new Joystick(0);
         Joystick rightStick = new Joystick(1);
         TwoStickArcade twoStickArcade = new TwoStickArcade(leftStick, rightStick);
-        StartUpSpeed startUpSpeed = new StartUpSpeed();        
+        new StartUpSpeed();
+        
+        twoStickArcade.start();
+        
     }
 
     /**
