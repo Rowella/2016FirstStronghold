@@ -27,8 +27,8 @@ public class DriveSubsystem extends Subsystem {
 	PIDController leftPID = new PIDController(kP, kI, kD, leftEncoder, leftMotor);
 	PIDController rightPID = new PIDController(kP, kI, kD, rightEncoder, rightMotor);*/
 	
-	double speed = 0.6;
-	double acceleration = 0.5;
+	public double speed = 1;
+	public double acceleration = 0.5;
 	public double accelerationType;
 	public double speedType;
 	

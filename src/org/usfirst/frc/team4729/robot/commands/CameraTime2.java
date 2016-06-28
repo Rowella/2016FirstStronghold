@@ -2,32 +2,52 @@ package org.usfirst.frc.team4729.robot.commands;
 
 import org.usfirst.frc.team4729.robot.Robot;
 
+import edu.wpi.first.wpilibj.Encoder;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
  */
-public class StartUpSpeed extends Command {
-
-    public StartUpSpeed() {
+public class CameraTime2 extends Command {
+	double speed = 0.6;
+	boolean isFinished = false;
+	Timer timer;
+	
+	
+	
+	
+    public CameraTime2() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	timer.start();
+    	Robot.camServo.camDown();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.driveSubsystem.highSpeed();
-    	Robot.driveSubsystem.highAcceleration();
+    	if (timer.get() >= 1) {
+    		Robot.driveSubsystem.tank(0, 0);
+    		isFinished = true;
+    	}
+    	
+    	else {
+    		Robot.driveSubsystem.tank(speed, speed);
+    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+    	if (isFinished) {
+    		return true;
+    	}
+    	else {
+    		return false;
+    	}
     }
 
     // Called once after isFinished returns true
