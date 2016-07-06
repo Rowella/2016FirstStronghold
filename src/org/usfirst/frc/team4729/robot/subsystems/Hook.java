@@ -61,13 +61,13 @@ public class Hook extends Subsystem {
     
     public void fire() {
     	if (ready == true) {
-   			solenoid.set(DoubleSolenoid.Value.kForward);
+   			solenoid.set(DoubleSolenoid.Value.kReverse);
    		}
    	}
     
     public void close() {
     	if (ready == true) {
-			solenoid.set(DoubleSolenoid.Value.kReverse);
+			solenoid.set(DoubleSolenoid.Value.kForward);
     	}
     }
     
