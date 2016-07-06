@@ -127,9 +127,9 @@ public class Robot extends IterativeRobot {
         new StartUpSpeed();
         
         twoStickArcade.start();
+              
         
         Compressor c = new Compressor(0);
-        
         c.setClosedLoopControl(true);
         
     }

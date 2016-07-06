@@ -21,8 +21,8 @@ public class LEDMovement extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.lEDMovement = true;
-    	SmartDashboard.putBoolean("ledMovement", true);
+    	//Robot.lEDMovement = true;
+    	//SmartDashboard.putBoolean("ledMovement", true);
     }
 
     // Make this return true when this Command no longer needs to run execute()

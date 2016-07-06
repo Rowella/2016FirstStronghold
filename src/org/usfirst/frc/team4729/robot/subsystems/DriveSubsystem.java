@@ -17,15 +17,15 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class DriveSubsystem extends Subsystem {
 	RobotDrive driveTrain = new RobotDrive(RobotMap.LEFT_MOTOR, RobotMap.RIGHT_MOTOR);
-	/**double kP = 1;
-	double kI = 1;
-	double kD = 1;
-	Talon leftMotor = new Talon(RobotMap.LEFT_MOTOR);
-	Talon rightMotor = new Talon(RobotMap.RIGHT_MOTOR);
-	Encoder leftEncoder = new Encoder(5, 6);
-	Encoder rightEncoder = new Encoder (2, 3);
-	PIDController leftPID = new PIDController(kP, kI, kD, leftEncoder, leftMotor);
-	PIDController rightPID = new PIDController(kP, kI, kD, rightEncoder, rightMotor);*/
+	//double kP = 1;
+	//double kI = 1;
+	//double kD = 1;
+	//Talon leftMotor = new Talon(RobotMap.LEFT_MOTOR);
+	//Talon rightMotor = new Talon(RobotMap.RIGHT_MOTOR);
+	//Encoder leftEncoder = new Encoder(5, 6);
+	//Encoder rightEncoder = new Encoder (2, 3);
+	//PIDController leftPID = new PIDController(kP, kI, kD, leftEncoder, leftMotor);
+	//PIDController rightPID = new PIDController(kP, kI, kD, rightEncoder, rightMotor);*/
 	
 	public double speed = 1;
 	public double acceleration = 0.5;
@@ -82,6 +82,9 @@ public class DriveSubsystem extends Subsystem {
     	turnSpeed += (desiredTurn-turnSpeed)*acceleration;
     	forwardSpeed += (desiredMove-forwardSpeed)*acceleration;
     	driveTrain.arcadeDrive(-forwardSpeed*speed, -turnSpeed*speed);
+    	
+    	Robot.lED.doppler(forwardSpeed*speed, forwardSpeed*speed);
+    	
     	/*if (Robot.ledMovement == true){
     		Robot.leds.set(-forwardSpeed*speed, -turnSpeed*speed);
     	}*/
@@ -122,6 +125,9 @@ public class DriveSubsystem extends Subsystem {
     	} */
     	//driveTrain.arcadeDrive(desiredMove * 0.5, desiredTurn * 0.5);
     	//driveTrain.arcadeDrive(forwardSpeed*speed, turnSpeed*speed);
+    	
+
+    	
     }
     
     
@@ -157,7 +163,12 @@ public class DriveSubsystem extends Subsystem {
  /*   	if (Robot.lEDMovement == true){
     		Robot.lED.set(-leftSpeed*speed, -rightSpeed*speed);
     	} */
+    	
+    	Robot.lED.doppler(leftSpeed*speed, rightSpeed*speed);
+    	
     	driveTrain.tankDrive(leftSpeed*speed, rightSpeed*speed);
+    	
+    	
 	}
     
 }

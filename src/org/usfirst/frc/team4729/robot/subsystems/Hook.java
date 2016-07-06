@@ -36,7 +36,11 @@ public class Hook extends Subsystem {
     }
     
     public void pistonUp() {
-    	piston.set(1);
+    	piston.set(0.4);
+    }
+    
+    public void pistonDown() {
+    	piston.set(-0.4);
     }
     
     public void pistonStop() {
@@ -47,16 +51,24 @@ public class Hook extends Subsystem {
     	winch.set(1);
     }
     
+    public void winchOut() {
+    	winch.set(-0.3);
+    }
+    
     public void winchStop() {
     	winch.set(0);
     }
     
     public void fire() {
-    		solenoid.set(DoubleSolenoid.Value.kForward);
-    	}
+    	if (ready == true) {
+   			solenoid.set(DoubleSolenoid.Value.kForward);
+   		}
+   	}
     
     public void close() {
+    	if (ready == true) {
 			solenoid.set(DoubleSolenoid.Value.kReverse);
+    	}
     }
     
     

@@ -20,12 +20,13 @@ public class ToggleLEDMode extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if (Robot.lEDMovement == true) {
+  /*  	if (Robot.lEDMovement == true) {
     		new LEDCycle();
     	}
     	else {
     		new LEDMovement();
     	}
+    	*/
     }
 
     // Make this return true when this Command no longer needs to run execute()

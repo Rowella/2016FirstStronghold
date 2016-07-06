@@ -23,13 +23,14 @@ public class TomahawksUp extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	Robot.tomahawk.up();
-    	Robot.camServo.camUp();
+    	//.camServo.camUp();
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
     	/*if (Robot.limitSwitch.isLower()) {
     		SmartDashboard.putString("Tomahawk limit", "At upper limit");
+    		Robot.tomahawk.stop();
         	return true;
         }
         
@@ -42,13 +43,13 @@ public class TomahawksUp extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	//Robot.tomahawk.stop();
+    	
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
     	Robot.tomahawk.stop();
-    	Robot.camServo.stop();
+    	//Robot.camServo.stop();
     }
 }
