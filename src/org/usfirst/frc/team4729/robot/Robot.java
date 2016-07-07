@@ -24,6 +24,7 @@ import org.usfirst.frc.team4729.robot.subsystems.Hook;
 import org.usfirst.frc.team4729.robot.subsystems.LED;
 import org.usfirst.frc.team4729.robot.subsystems.LimitSwitch;
 import org.usfirst.frc.team4729.robot.subsystems.Pot;
+import org.usfirst.frc.team4729.robot.subsystems.Retention;
 import org.usfirst.frc.team4729.robot.subsystems.Shooter;
 import org.usfirst.frc.team4729.robot.subsystems.Tomahawk;
 import org.usfirst.frc.team4729.robot.subsystems.Winch;
@@ -58,6 +59,7 @@ public class Robot extends IterativeRobot {
 	public static Pot pot;
 	public static CamServo camServo;
 	public static CameraReader cameraReader;
+	public static Retention retention;
     CommandGroup autonomousCommand;
     
     public static Hook hook;
@@ -83,6 +85,7 @@ public class Robot extends IterativeRobot {
 		limitSwitch = new LimitSwitch();
 		camServo = new CamServo();
 		cameraReader = new CameraReader();
+		retention = new Retention();
 		
 		hook = new Hook();
 		

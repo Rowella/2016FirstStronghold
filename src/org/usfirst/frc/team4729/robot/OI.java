@@ -22,6 +22,7 @@ import org.usfirst.frc.team4729.robot.commands.OneStickTank;
 import org.usfirst.frc.team4729.robot.commands.OneStickTankXbox;
 import org.usfirst.frc.team4729.robot.commands.PistonChange;
 import org.usfirst.frc.team4729.robot.commands.PistonDown;
+import org.usfirst.frc.team4729.robot.commands.RetentionRelease;
 import org.usfirst.frc.team4729.robot.commands.RetractClimber;
 import org.usfirst.frc.team4729.robot.commands.Safety;
 import org.usfirst.frc.team4729.robot.commands.Shoot;
@@ -133,7 +134,7 @@ public class OI {
     	//rightButton10.whileHeld ();
     	//rightButton11.whileHeld ();
     	
-  	    a.whileHeld               (new Safety());
+  	    a.whileHeld               (new RetentionRelease());
     	b.whileHeld               (new Fiiiiire());
     	x.whileHeld               (new WinchIn());
     	y.whileHeld               (new PistonChange());
@@ -141,7 +142,7 @@ public class OI {
     	rb.whileHeld              (new Intake());
     	start.whileHeld           (new PistonChange());
     	select.whileHeld          (new PistonDown());
-    	//l3.whileHeld            ();
+    	l3.whileHeld            (new Safety());
     	r3.whileHeld              (new WinchOut());
     	
 //    	a2.whenPressed            (new OneStickTankXbox(xbox2));

@@ -21,6 +21,7 @@ public class RobotMap {
 	
 	public static int WINCH_MOTOR = 9;
 	public static int PISTON_MOTOR = 4;
+	public static int RETSERVO = 3;
 	
 	//PCM outputs
 	public static int SOLENOID_A = 0;
@@ -29,8 +30,8 @@ public class RobotMap {
 	//public static int LIFT_MOTOR = ;
 	
 	// digital inputs
-	public static int LIMIT_SWITCH_LOWER = 3;
-	public static int LIMIT_SWITCH_UPPER = 10;
+	public static int LIMIT_SWITCH_LOWER = 0;
+	public static int LIMIT_SWITCH_UPPER = 1;
 	
 	//analog inputs
 //	public static int POT = 0;
